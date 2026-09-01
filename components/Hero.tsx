@@ -55,27 +55,28 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="mt-14 flex max-w-md items-center gap-2">
-          {scenes.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              aria-label={`Show scene ${i + 1}`}
-              onClick={() => setActive(i)}
-              className="relative h-[2px] flex-1 overflow-hidden rounded-full bg-cream/25"
-            >
-              <span
-                className={`absolute inset-y-0 left-0 block rounded-full bg-cream ${
-                  i === active
-                    ? "w-full animate-[hero-progress_6s_linear]"
-                    : i < active
-                    ? "w-full"
-                    : "w-0"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 z-10 flex items-center gap-0.5">
+        {scenes.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Show scene ${i + 1}`}
+            onClick={() => setActive(i)}
+            className="relative h-[3px] flex-1 overflow-hidden bg-cream/25"
+          >
+            <span
+              className={`absolute inset-y-0 left-0 block bg-cream ${
+                i === active
+                  ? "w-full animate-[hero-progress_6s_linear]"
+                  : i < active
+                  ? "w-full"
+                  : "w-0"
+              }`}
+            />
+          </button>
+        ))}
       </div>
     </section>
   );
