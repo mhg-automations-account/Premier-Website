@@ -1,36 +1,18 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { SceneDusk, SceneDawn, SceneMountain } from "./HeroScenes";
+import Image from "next/image";
 import { ArrowRightIcon, HouseMarkIcon } from "./icons";
 
-const SLIDE_DURATION = 6000;
-
-const scenes = [SceneDusk, SceneDawn, SceneMountain];
-
 export default function Hero() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setActive((v) => (v + 1) % scenes.length);
-    }, SLIDE_DURATION);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section id="top" className="relative h-[92vh] min-h-[620px] w-full overflow-hidden">
-      {scenes.map((Scene, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-[1400ms] ease-out ${
-            i === active ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Scene className="h-full w-full" />
-        </div>
-      ))}
-
+      <Image
+        src="/hero-cabin-in-the-woods.jpeg"
+        alt="A Cascade Modular Homes cabin nestled among tall pines"
+        fill
+        preload
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-charcoal/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/50 via-transparent to-transparent" />
 
@@ -54,29 +36,6 @@ export default function Hero() {
             <ArrowRightIcon className="arrow h-4 w-4" />
           </a>
         </div>
-
-      </div>
-
-      <div className="absolute inset-x-0 bottom-0 z-10 flex items-center gap-0.5">
-        {scenes.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            aria-label={`Show scene ${i + 1}`}
-            onClick={() => setActive(i)}
-            className="relative h-[3px] flex-1 overflow-hidden bg-cream/25"
-          >
-            <span
-              className={`absolute inset-y-0 left-0 block bg-cream ${
-                i === active
-                  ? "w-full animate-[hero-progress_6s_linear]"
-                  : i < active
-                  ? "w-full"
-                  : "w-0"
-              }`}
-            />
-          </button>
-        ))}
       </div>
     </section>
   );
