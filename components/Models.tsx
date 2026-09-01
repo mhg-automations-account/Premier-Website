@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
-import HouseCardArt from "./HouseCardArt";
 import { ArrowRightIcon, BathIcon, BedIcon, ExpandIcon, StarIcon } from "./icons";
 
 const homes = [
@@ -12,7 +12,7 @@ const homes = [
     sqft: "728",
     tags: ["Open Floor Plan", "Covered Porch"],
     price: "62,900",
-    art: { sky: ["#f4e6c4", "#e3c98f"] as [string, string], siding: "#f2ede0", roof: "#4c5b45", door: "#7a5230" },
+    photo: { src: "/model-magnolia-living-room.webp", alt: "Living room in The Magnolia" },
   },
   {
     name: "The Ridgeline",
@@ -23,7 +23,7 @@ const homes = [
     sqft: "1,600",
     tags: ["Island Kitchen", "Primary Suite"],
     price: "94,500",
-    art: { sky: ["#dfe8e0", "#b9cdb8"] as [string, string], siding: "#e7e2d2", roof: "#39473c", door: "#5d4128" },
+    photo: { src: "/model-ridgeline-kitchen.webp", alt: "Open kitchen and living room in The Ridgeline" },
   },
   {
     name: "The Cascade",
@@ -34,7 +34,7 @@ const homes = [
     sqft: "1,808",
     tags: ["Bonus Room", "Energy Star"],
     price: "118,900",
-    art: { sky: ["#f6ded0", "#e9b98f"] as [string, string], siding: "#efe6d4", roof: "#5a382b", door: "#33403a" },
+    photo: { src: "/model-cascade-living-room.webp", alt: "Living room with fireplace in The Cascade" },
   },
 ];
 
@@ -61,9 +61,12 @@ export default function Models() {
             >
               <div className="overflow-hidden rounded-3xl border border-sage-200/70 bg-white shadow-[0_20px_45px_-24px_rgba(38,36,32,0.35)] transition-transform duration-500 group-hover:-translate-y-2">
                 <div className="relative h-52 overflow-hidden">
-                  <HouseCardArt
-                    {...home.art}
-                    className="h-full w-full scale-105 transition-transform duration-700 group-hover:scale-110"
+                  <Image
+                    src={home.photo.src}
+                    alt={home.photo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="glass absolute top-4 right-4 flex items-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold text-ink">
                     <StarIcon className="h-3.5 w-3.5 text-gold" />
