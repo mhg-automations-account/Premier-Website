@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FacebookIcon,
   HouseMarkIcon,
@@ -9,12 +10,13 @@ import {
 } from "./icons";
 
 const pageLinks = [
-  { label: "Home", href: "#top" },
-  { label: "Our Models", href: "#models" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-  { label: "Get A Quote", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Our Models", href: "/#models" },
+  { label: "All Homes", href: "/homes" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Get A Quote", href: "/#contact" },
 ];
 
 export default function Footer() {
@@ -42,9 +44,9 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {pageLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="transition-colors hover:text-cream">
+                  <Link href={link.href} className="transition-colors hover:text-cream">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingCallButton from "@/components/FloatingCallButton";
+import HomeCard from "@/components/HomeCard";
+import Reveal from "@/components/Reveal";
+import { ArrowRightIcon } from "@/components/icons";
+import { homes } from "@/lib/homes";
+
+export const metadata: Metadata = {
+  title: "All Available Homes | Cascade Modular Homes",
+  description:
+    "Browse every modular and manufactured home currently available from Cascade Modular Homes, with floor plans, pricing, and specs.",
+};
+
+export default function HomesPage() {
+  return (
+    <>
+      <Navbar />
+      <main className="flex-1">
+        <section className="relative flex h-[46vh] min-h-[380px] w-full items-end overflow-hidden">
+          <Image
+            src="/model-cascade-living-room.webp"
+            alt="Living room with fireplace in The Cascade"
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-charcoal/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/15 to-transparent" />
+
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 lg:px-10">
+            <Link
+              href="/"
+              className="text-cream/70 inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.18em] uppercase transition-colors hover:text-cream"
+            >
+              &larr; Back Home
+            </Link>
+            <h1 className="font-display mt-4 text-4xl text-cream sm:text-5xl">
+              All Available Homes
+            </h1>
+            <p className="mt-4 max-w-md text-base text-cream/80">
+              Browse our full lineup of modular and manufactured homes, ready
+              to customize and build around you.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-sage-50/60 py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {homes.map((home, i) => (
+                <Reveal key={home.slug} delay={i * 90} className="group">
+                  <HomeCard home={home} />
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="mt-16 text-center" delay={homes.length * 90}>
+              <p className="text-muted text-sm">
+                Don&apos;t see the right fit? We add new floor plans regularly.
+              </p>
+              <Link
+                href="/#contact"
+                className="btn-pill mt-5 inline-flex border border-ink/80 bg-ink text-cream hover:bg-charcoal"
+              >
+                Talk To Our Team
+                <ArrowRightIcon className="arrow h-4 w-4" />
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <FloatingCallButton />
+    </>
+  );
+}
