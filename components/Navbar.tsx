@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { HouseMarkIcon } from "./icons";
 
 const links = [
-  { href: "#models", label: "Models" },
-  { href: "#why-us", label: "Why Us" },
-  { href: "#process", label: "Process" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#models", label: "Models" },
+  { href: "/#why-us", label: "Why Us" },
+  { href: "/#process", label: "Process" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-        <a href="#top" className="flex items-center gap-2.5">
+        <Link href="/#top" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage-100 text-sage-600">
             <HouseMarkIcon className="h-5 w-5" />
           </span>
@@ -42,11 +43,11 @@ export default function Navbar() {
           >
             Cascade Modular Homes
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-9 lg:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-500 ${
@@ -54,13 +55,13 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="hidden lg:block">
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className={`btn-pill transition-all duration-500 ${
               scrolled
                 ? "border border-ink/80 bg-cream text-ink hover:bg-ink hover:text-cream"
@@ -68,7 +69,7 @@ export default function Navbar() {
             }`}
           >
             Get A Quote
-          </a>
+          </Link>
         </div>
 
         <button
@@ -93,22 +94,22 @@ export default function Navbar() {
         <div className="glass border-t border-sage-200/60 px-6 pb-6 lg:hidden">
           <div className="flex flex-col gap-4 pt-4">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-sm font-semibold tracking-[0.15em] text-ink/80 uppercase"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="btn-pill mt-1 justify-center border border-ink/80 bg-cream text-ink"
             >
               Get A Quote
-            </a>
+            </Link>
           </div>
         </div>
       )}
