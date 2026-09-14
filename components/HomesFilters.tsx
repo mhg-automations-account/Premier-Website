@@ -3,13 +3,14 @@
 import { useMemo, useState } from "react";
 import HomeCard from "./HomeCard";
 import Reveal from "./Reveal";
-import { parsePriceValue, type Home } from "@/lib/homes";
+import { homeTypes, parsePriceValue, parseSqftValue, type Home, type HomeTypeLabel } from "@/lib/homes";
 
 const MIN_PRICE = 30_000;
 const MAX_PRICE = 200_000;
 
 const bedroomOptions = ["Any", "2+", "3+", "4+"] as const;
 const bathroomOptions = ["Any", "2+", "3+"] as const;
+const homeTypeOptions = ["Any", ...homeTypes.map((t) => t.label)] as const;
 
 function formatPrice(value: number) {
   return `$${value.toLocaleString()}`;
@@ -17,6 +18,7 @@ function formatPrice(value: number) {
 
 export default function HomesFilters({ homes }: { homes: Home[] }) {
   const [search, setSearch] = useState("");
+  const [homeType, setHomeType] = useState<"Any" | HomeTypeLabel>("Any");
   const [maxPrice, setMaxPrice] = useState(MAX_PRICE);
   const [bedrooms, setBedrooms] = useState<(typeof bedroomOptions)[number]>("Any");
   const [bathrooms, setBathrooms] = useState<(typeof bathroomOptions)[number]>("Any");
@@ -42,12 +44,18 @@ export default function HomesFilters({ homes }: { homes: Home[] }) {
       if (home.baths < minBaths) return false;
       if (brands.length > 0 && !brands.includes(home.brand)) return false;
 
+      if (homeType !== "Any") {
+        const range = homeTypes.find((t) => t.label === homeType)!;
+        const sqftValue = parseSqftValue(home.sqft);
+        if (sqftValue === null || sqftValue < range.min || sqftValue > range.max) return false;
+      }
+
       const priceValue = parsePriceValue(home.price);
       if (priceValue !== null && priceValue > maxPrice) return false;
 
       return true;
     });
-  }, [homes, search, maxPrice, bedrooms, bathrooms, brands]);
+  }, [homes, search, homeType, maxPrice, bedrooms, bathrooms, brands]);
 
   function toggleBrand(brand: string) {
     setBrands((current) =>
@@ -57,6 +65,7 @@ export default function HomesFilters({ homes }: { homes: Home[] }) {
 
   function clearFilters() {
     setSearch("");
+    setHomeType("Any");
     setMaxPrice(MAX_PRICE);
     setBedrooms("Any");
     setBathrooms("Any");
@@ -64,7 +73,12 @@ export default function HomesFilters({ homes }: { homes: Home[] }) {
   }
 
   const hasActiveFilters =
-    search !== "" || maxPrice !== MAX_PRICE || bedrooms !== "Any" || bathrooms !== "Any" || brands.length > 0;
+    search !== "" ||
+    homeType !== "Any" ||
+    maxPrice !== MAX_PRICE ||
+    bedrooms !== "Any" ||
+    bathrooms !== "Any" ||
+    brands.length > 0;
 
   return (
     <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
@@ -94,6 +108,28 @@ export default function HomesFilters({ homes }: { homes: Home[] }) {
             placeholder="Name, model, style..."
             className="w-full rounded-xl border border-maroon-200 bg-white px-4 py-2.5 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-maroon-400"
           />
+        </div>
+
+        <div className="mt-7">
+          <span className="mb-2 block text-xs font-semibold tracking-[0.14em] text-muted uppercase">
+            Home Type
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {homeTypeOptions.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setHomeType(option)}
+                className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                  homeType === option
+                    ? "border-ink bg-ink text-cream"
+                    : "border-maroon-200 text-ink/70 hover:border-maroon-400"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="mt-7">

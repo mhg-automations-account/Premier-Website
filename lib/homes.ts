@@ -84,3 +84,17 @@ export function parsePriceValue(price: string): number | null {
   const digits = price.replace(/[^0-9]/g, "");
   return digits ? Number(digits) : null;
 }
+
+export function parseSqftValue(sqft: string): number | null {
+  const digits = sqft.replace(/[^0-9]/g, "");
+  return digits ? Number(digits) : null;
+}
+
+export const homeTypes = [
+  { label: "Tiny Home", min: 0, max: 799 },
+  { label: "Single Wide", min: 800, max: 1_199 },
+  { label: "Double Wide", min: 1_200, max: 1_999 },
+  { label: "Triple Wide", min: 2_000, max: Infinity },
+] as const;
+
+export type HomeTypeLabel = (typeof homeTypes)[number]["label"];
