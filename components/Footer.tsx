@@ -76,7 +76,7 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-            <p className="mt-4 text-xs text-cream/50">Mon – Fri: 9am – 5pm</p>
+            <p className="mt-4 text-xs text-cream/50">Mon – Fri: 9am – 6pm</p>
           </div>
 
           <div>

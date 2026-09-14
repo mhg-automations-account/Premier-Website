@@ -10,8 +10,8 @@ export default function Hero() {
   return (
     <section id="top" className="relative w-full overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
       <Image
-        src="/hero-cabin-in-the-woods.jpeg"
-        alt="A Premier Midwest Homes manufactured home nestled among tall pines"
+        src="/hero-background.jpeg"
+        alt="A Premier Midwest Homes manufactured home with a covered front porch"
         fill
         preload
         sizes="100vw"
