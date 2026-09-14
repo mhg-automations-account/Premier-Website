@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { HouseMarkIcon } from "./icons";
 
 const links = [
   { href: "/#models", label: "Models" },
@@ -33,9 +33,13 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <Link href="/#top" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-maroon-100 text-maroon-600">
-            <HouseMarkIcon className="h-5 w-5" />
-          </span>
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            width={847}
+            height={680}
+            className="h-9 w-auto"
+          />
           <span
             className={`font-display text-lg tracking-tight transition-colors duration-500 ${
               scrolled ? "text-ink" : "text-cream"
