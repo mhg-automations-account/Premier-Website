@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRightIcon, HouseMarkIcon } from "./icons";
+import { ArrowRightIcon } from "./icons";
 
 export default function Hero() {
   return (
@@ -17,7 +17,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/50 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 lg:px-10">
-        <HouseMarkIcon className="mb-6 h-7 w-7 text-gold animate-float-slow" />
+        <Image
+          src="/logo-mark.png"
+          alt=""
+          width={847}
+          height={680}
+          className="mb-6 h-9 w-auto animate-float-slow"
+        />
         <h1 className="font-display max-w-2xl text-[3.2rem] leading-[1.05] text-cream sm:text-[4.4rem]">
           Quality Homes,
           <br />

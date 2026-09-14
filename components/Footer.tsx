@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   FacebookIcon,
-  HouseMarkIcon,
   InstagramIcon,
   MailIcon,
   MapPinIcon,
@@ -25,14 +25,13 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr_0.8fr]">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-maroon-400/20 text-maroon-300">
-                <HouseMarkIcon className="h-5 w-5" />
-              </span>
-              <span className="font-display text-lg text-cream">
-                Premier Midwest Homes
-              </span>
-            </div>
+            <Image
+              src="/Logo.png"
+              alt="Premier Midwest Homes"
+              width={1802}
+              height={873}
+              className="h-14 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               Quality, affordable manufactured and modular homes for families
               across the 4-State Area, with a team that guides you from first
