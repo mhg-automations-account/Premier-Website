@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cascade Modular Homes | Quality Modular & Manufactured Homes",
+  title: "Premier Midwest Homes | Affordable Manufactured & Modular Homes",
   description:
-    "Cascade Modular Homes helps families find, finance, and set up the modular or manufactured home of their dreams — with straightforward pricing and a team that guides you every step of the way.",
+    "Premier Midwest Homes helps families across Kansas, Missouri, Illinois, Iowa, and Indiana find quality manufactured and modular homes at an affordable price — with financing, delivery, and setup handled every step of the way.",
 };
 
 export default function RootLayout({

@@ -10,9 +10,9 @@ import { ArrowRightIcon } from "@/components/icons";
 import { homes } from "@/lib/homes";
 
 export const metadata: Metadata = {
-  title: "All Available Homes | Cascade Modular Homes",
+  title: "All Available Homes | Premier Midwest Homes",
   description:
-    "Browse every modular and manufactured home currently available from Cascade Modular Homes, with floor plans, pricing, and specs.",
+    "Browse manufactured and modular homes currently available from Premier Midwest Homes, with floor plans, specs, and pricing.",
 };
 
 export default function HomesPage() {
@@ -22,8 +22,8 @@ export default function HomesPage() {
       <main className="flex-1">
         <section className="relative flex h-[46vh] min-h-[380px] w-full items-end overflow-hidden">
           <Image
-            src="/model-cascade-living-room.webp"
-            alt="Living room with fireplace in The Cascade"
+            src="/model-ridgeline-kitchen.webp"
+            alt="Open kitchen and living room in a Premier Midwest Homes manufactured home"
             fill
             preload
             sizes="100vw"
@@ -43,13 +43,13 @@ export default function HomesPage() {
               All Available Homes
             </h1>
             <p className="mt-4 max-w-md text-base text-cream/80">
-              Browse our full lineup of modular and manufactured homes, ready
-              to customize and build around you.
+              Browse our lineup of manufactured and modular homes, ready for
+              financing, delivery, and setup on your land.
             </p>
           </div>
         </section>
 
-        <section className="bg-sage-50/60 py-20 lg:py-28">
+        <section className="bg-maroon-50/60 py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {homes.map((home, i) => (

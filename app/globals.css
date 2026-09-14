@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #faf9f5;
-  --cream-soft: #f2f0e9;
-  --ink: #211f1a;
-  --muted: #6f6c62;
-  --muted-soft: #a19d90;
+  --cream: #faf7f2;
+  --cream-soft: #f3ece2;
+  --ink: #241512;
+  --muted: #6f5b52;
+  --muted-soft: #a89489;
 
-  --sage-50: #f4f6f1;
-  --sage-100: #e6ebe0;
-  --sage-200: #cdd8c2;
-  --sage-300: #aec19d;
-  --sage-400: #8fa980;
-  --sage-500: #79996a;
-  --sage-600: #628055;
-  --sage-700: #4e6644;
+  --maroon-50: #faf1ef;
+  --maroon-100: #f3dad5;
+  --maroon-200: #e0b3aa;
+  --maroon-300: #cf8b7c;
+  --maroon-400: #a8483a;
+  --maroon-500: #8a3226;
+  --maroon-600: #6b241a;
+  --maroon-700: #4a1712;
 
-  --charcoal: #262420;
-  --charcoal-soft: #322f29;
+  --charcoal: #2a1512;
+  --charcoal-soft: #3a1e19;
 
   --gold: #d4a24c;
+  --gold-deep: #9c7515;
 
   --background: var(--cream);
   --foreground: var(--ink);
@@ -32,18 +33,19 @@
   --color-muted: var(--muted);
   --color-muted-soft: var(--muted-soft);
 
-  --color-sage-50: var(--sage-50);
-  --color-sage-100: var(--sage-100);
-  --color-sage-200: var(--sage-200);
-  --color-sage-300: var(--sage-300);
-  --color-sage-400: var(--sage-400);
-  --color-sage-500: var(--sage-500);
-  --color-sage-600: var(--sage-600);
-  --color-sage-700: var(--sage-700);
+  --color-maroon-50: var(--maroon-50);
+  --color-maroon-100: var(--maroon-100);
+  --color-maroon-200: var(--maroon-200);
+  --color-maroon-300: var(--maroon-300);
+  --color-maroon-400: var(--maroon-400);
+  --color-maroon-500: var(--maroon-500);
+  --color-maroon-600: var(--maroon-600);
+  --color-maroon-700: var(--maroon-700);
 
   --color-charcoal: var(--charcoal);
   --color-charcoal-soft: var(--charcoal-soft);
   --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -53,7 +55,7 @@
 }
 
 * {
-  border-color: var(--sage-200);
+  border-color: var(--maroon-200);
 }
 
 html {
@@ -77,7 +79,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--sage-600);
+  color: var(--gold-deep);
 }
 
 .btn-pill {
@@ -210,6 +212,6 @@ body {
 }
 
 ::selection {
-  background: var(--sage-300);
-  color: var(--charcoal);
+  background: var(--maroon-300);
+  color: var(--cream);
 }

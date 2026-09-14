@@ -14,7 +14,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="glass-card flex h-full min-h-[520px] flex-col items-center justify-center rounded-3xl p-10 text-center shadow-[0_30px_60px_-30px_rgba(38,36,32,0.4)]">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-sage-100 text-sage-600">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-maroon-100 text-maroon-600">
           <CheckIcon className="h-8 w-8" />
         </span>
         <h3 className="font-display mt-6 text-2xl text-ink">Thanks for reaching out!</h3>
@@ -44,7 +44,7 @@ export default function ContactForm() {
             required
             type="text"
             placeholder="Your full name"
-            className="w-full rounded-xl border border-sage-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-sage-400"
+            className="w-full rounded-xl border border-maroon-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-maroon-400"
           />
         </div>
 
@@ -57,7 +57,7 @@ export default function ContactForm() {
             required
             type="email"
             placeholder="you@example.com"
-            className="w-full rounded-xl border border-sage-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-sage-400"
+            className="w-full rounded-xl border border-maroon-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-maroon-400"
           />
         </div>
 
@@ -70,7 +70,7 @@ export default function ContactForm() {
             required
             type="tel"
             placeholder="(555) 123-4567"
-            className="w-full rounded-xl border border-sage-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-sage-400"
+            className="w-full rounded-xl border border-maroon-200 bg-white/70 px-4 py-3 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-maroon-400"
           />
         </div>
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <select
               id="budget"
               defaultValue=""
-              className="w-full appearance-none rounded-xl border border-sage-200 bg-white/70 px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-sage-400"
+              className="w-full appearance-none rounded-xl border border-maroon-200 bg-white/70 px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-maroon-400"
             >
               <option value="" disabled>
                 Select a range
@@ -106,14 +106,14 @@ export default function ContactForm() {
               id="location"
               type="text"
               placeholder="City, State or County"
-              className="w-full rounded-xl border border-sage-200 bg-white/70 py-3 pr-4 pl-10 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-sage-400"
+              className="w-full rounded-xl border border-maroon-200 bg-white/70 py-3 pr-4 pl-10 text-sm text-ink placeholder:text-muted-soft outline-none transition-colors focus:border-maroon-400"
             />
           </div>
         </div>
 
         <button
           type="submit"
-          className="btn-pill w-full justify-center bg-sage-400 text-white shadow-lg shadow-sage-500/25 hover:bg-sage-500"
+          className="btn-pill w-full justify-center bg-maroon-400 text-white shadow-lg shadow-maroon-500/25 hover:bg-maroon-500"
         >
           <PaperPlaneIcon className="h-4 w-4" />
           Get In Touch
