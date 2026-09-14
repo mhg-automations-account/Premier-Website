@@ -8,14 +8,20 @@ export default function HomeCard({ home }: { home: Home }) {
 
   return (
     <div className="overflow-hidden rounded-3xl border border-maroon-200/70 bg-white shadow-[0_20px_45px_-24px_rgba(38,36,32,0.35)] transition-transform duration-500 group-hover:-translate-y-2">
-      <div className="relative h-52 overflow-hidden">
-        <Image
-          src={home.photo.src}
-          alt={home.photo.alt}
-          fill
-          sizes="(min-width: 1024px) 33vw, 100vw"
-          className="scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
-        />
+      <div className="relative h-52 overflow-hidden bg-maroon-100">
+        {home.photo ? (
+          <Image
+            src={home.photo.src}
+            alt={home.photo.alt}
+            fill
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            className="scale-105 object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <div className="text-muted flex h-full w-full items-center justify-center text-xs font-semibold tracking-[0.14em] uppercase">
+            Photo Coming Soon
+          </div>
+        )}
       </div>
 
       <div className="p-6">
