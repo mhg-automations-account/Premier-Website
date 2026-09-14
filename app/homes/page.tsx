@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
-import HomeCard from "@/components/HomeCard";
+import HomesFilters from "@/components/HomesFilters";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon } from "@/components/icons";
 import { homes } from "@/lib/homes";
@@ -51,15 +51,9 @@ export default function HomesPage() {
 
         <section className="bg-maroon-50/60 py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {homes.map((home, i) => (
-                <Reveal key={home.slug} delay={i * 90} className="group">
-                  <HomeCard home={home} />
-                </Reveal>
-              ))}
-            </div>
+            <HomesFilters homes={homes} />
 
-            <Reveal className="mt-16 text-center" delay={homes.length * 90}>
+            <Reveal className="mt-16 text-center" delay={200}>
               <p className="text-muted text-sm">
                 Don&apos;t see the right fit? We add new floor plans regularly.
               </p>

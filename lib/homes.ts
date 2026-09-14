@@ -1,6 +1,7 @@
 export type Home = {
   slug: string;
   name: string;
+  brand: string;
   series: string;
   beds: number;
   baths: number;
@@ -14,6 +15,7 @@ export const homes: Home[] = [
   {
     slug: "serenity",
     name: "The Serenity",
+    brand: "Skyline",
     series: "Skyline Embrace 2864H42A7C",
     beds: 4,
     baths: 2,
@@ -25,6 +27,7 @@ export const homes: Home[] = [
   {
     slug: "bellamy",
     name: "The Bellamy",
+    brand: "Skyline",
     series: "Skyline Prairie Dune 8850",
     beds: 3,
     baths: 2,
@@ -36,6 +39,7 @@ export const homes: Home[] = [
   {
     slug: "madi",
     name: "The Madi",
+    brand: "Skyline",
     series: "Skyline Prairie Dune 8452",
     beds: 3,
     baths: 2,
@@ -47,6 +51,7 @@ export const homes: Home[] = [
   {
     slug: "simplicity-2",
     name: "Simplicity 2",
+    brand: "Skyline",
     series: "Skyline Embrace 1676H32A7H",
     beds: 3,
     baths: 2,
@@ -61,6 +66,7 @@ export const homes: Home[] = [
   {
     slug: "pike",
     name: "The Pike",
+    brand: "Champion Homes",
     series: "Champion Homes Tiny Home",
     beds: 1,
     baths: 1,
@@ -73,3 +79,8 @@ export const homes: Home[] = [
     },
   },
 ];
+
+export function parsePriceValue(price: string): number | null {
+  const digits = price.replace(/[^0-9]/g, "");
+  return digits ? Number(digits) : null;
+}
