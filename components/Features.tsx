@@ -32,7 +32,7 @@ export default function Features() {
   return (
     <section id="why-us" className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="eyebrow">The Cascade Difference</p>
+        <p className="eyebrow">The Premier Difference</p>
         <h2 className="font-display mt-4 text-4xl text-ink sm:text-5xl">
           Quality Meets Affordability
         </h2>
@@ -41,14 +41,14 @@ export default function Features() {
         </p>
       </Reveal>
 
-      <div className="mt-16 divide-y divide-sage-200/70 rounded-3xl border border-sage-200/70 bg-white/60">
+      <div className="mt-16 divide-y divide-maroon-200/70 rounded-3xl border border-maroon-200/70 bg-white/60">
         {features.map((feature, i) => (
           <Reveal
             key={feature.title}
             delay={i * 90}
             className="flex flex-col items-start gap-5 px-8 py-8 sm:flex-row sm:items-center sm:px-10"
           >
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-600">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-maroon-100 text-maroon-600">
               <feature.icon className="h-6 w-6" />
             </span>
             <span>

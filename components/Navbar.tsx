@@ -33,7 +33,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <Link href="/#top" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage-100 text-sage-600">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-maroon-100 text-maroon-600">
             <HouseMarkIcon className="h-5 w-5" />
           </span>
           <span
@@ -41,7 +41,7 @@ export default function Navbar() {
               scrolled ? "text-ink" : "text-cream"
             }`}
           >
-            Cascade Modular Homes
+            Premier Midwest Homes
           </span>
         </Link>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-500 ${
-                scrolled ? "text-ink/70 hover:text-sage-600" : "text-cream/85 hover:text-cream"
+                scrolled ? "text-ink/70 hover:text-maroon-600" : "text-cream/85 hover:text-cream"
               }`}
             >
               {link.label}
@@ -91,7 +91,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="glass border-t border-sage-200/60 px-6 pb-6 lg:hidden">
+        <div className="glass border-t border-maroon-200/60 px-6 pb-6 lg:hidden">
           <div className="flex flex-col gap-4 pt-4">
             {links.map((link) => (
               <Link

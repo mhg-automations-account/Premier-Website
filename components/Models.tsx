@@ -8,7 +8,7 @@ const featuredHomes = homes.slice(0, 3);
 
 export default function Models() {
   return (
-    <section id="models" className="bg-sage-50/60 py-24 lg:py-32">
+    <section id="models" className="bg-maroon-50/60 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Our Models</p>

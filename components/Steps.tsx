@@ -42,11 +42,11 @@ export default function Steps() {
             delay={i * 130}
             className="glass-card relative rounded-3xl px-7 py-10 text-center shadow-[0_18px_40px_-28px_rgba(38,36,32,0.4)] transition-transform duration-500 hover:-translate-y-2"
           >
-            <span className="absolute top-6 left-1/2 -z-0 h-16 w-16 -translate-x-1/2 rounded-full bg-sage-100 blur-xl" />
-            <span className="font-display relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sage-400 text-lg text-white shadow-md shadow-sage-500/30">
+            <span className="absolute top-6 left-1/2 -z-0 h-16 w-16 -translate-x-1/2 rounded-full bg-maroon-100 blur-xl" />
+            <span className="font-display relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-maroon-400 text-lg text-white shadow-md shadow-maroon-500/30">
               {i + 1}
             </span>
-            <step.icon className="mx-auto mt-5 h-6 w-6 text-sage-600" />
+            <step.icon className="mx-auto mt-5 h-6 w-6 text-maroon-600" />
             <h3 className="font-display mt-4 text-xl text-ink">{step.title}</h3>
             <p className="text-muted mt-2 text-sm">{step.description}</p>
           </Reveal>
