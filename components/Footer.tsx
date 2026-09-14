@@ -14,7 +14,6 @@ const pageLinks = [
   { label: "Our Models", href: "/#models" },
   { label: "All Homes", href: "/homes" },
   { label: "Why Us", href: "/#why-us" },
-  { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/#contact" },
   { label: "Get A Quote", href: "/#contact" },
 ];
