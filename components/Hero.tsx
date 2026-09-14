@@ -22,7 +22,7 @@ export default function Hero() {
           alt=""
           width={847}
           height={680}
-          className="mb-6 h-9 w-auto animate-float-slow"
+          className="mb-6 h-9 w-auto self-start animate-float-slow"
         />
         <h1 className="font-display max-w-2xl text-[3.2rem] leading-[1.05] text-cream sm:text-[4.4rem]">
           Quality Homes,
