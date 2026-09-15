@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import ContactForm from "./ContactForm";
 import { CheckIcon, PhoneIcon } from "./icons";
+import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from "@/lib/site";
 
 const checklist = ["Free Consultation", "No Obligation", "Quick Response"];
 
@@ -28,8 +29,8 @@ export default function Contact() {
             </span>
             <span>
               <span className="text-muted block text-sm">Call us directly</span>
-              <a href="tel:14173820829" className="font-display text-xl text-ink">
-                (417) 382-0829
+              <a href={`tel:${BUSINESS_PHONE_TEL}`} className="font-display text-xl text-ink">
+                {BUSINESS_PHONE_DISPLAY}
               </a>
             </span>
           </div>

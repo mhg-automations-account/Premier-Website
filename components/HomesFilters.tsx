@@ -219,6 +219,7 @@ export default function HomesFilters({ homes }: { homes: Home[] }) {
       </aside>
 
       <div>
+        <h2 className="sr-only">Available Homes</h2>
         <div className="mb-6 flex items-center justify-between">
           <p className="text-sm text-muted">
             <span className="font-semibold text-ink">{filteredHomes.length}</span> of{" "}

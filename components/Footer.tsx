@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MailIcon, MapPinIcon, PhoneIcon } from "./icons";
 import {
-  FacebookIcon,
-  InstagramIcon,
-  MailIcon,
-  MapPinIcon,
-  PhoneIcon,
-  TwitterIcon,
-} from "./icons";
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_PHONE_TEL,
+} from "@/lib/site";
 
 const pageLinks = [
   { label: "Home", href: "/#top" },
@@ -22,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-cream/70">
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr_0.8fr]">
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1.2fr]">
           <div>
             <Image
               src="/Logo.png"
@@ -56,14 +54,14 @@ export default function Footer() {
             <ul className="mt-5 space-y-4 text-sm">
               <li className="flex items-start gap-2.5">
                 <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-maroon-300" />
-                <a href="tel:14173820829" className="hover:text-cream">
-                  (417) 382-0829
+                <a href={`tel:${BUSINESS_PHONE_TEL}`} className="hover:text-cream">
+                  {BUSINESS_PHONE_DISPLAY}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-maroon-300" />
-                <a href="mailto:mak@premiermidwesthomes.com" className="hover:text-cream">
-                  mak@premiermidwesthomes.com
+                <a href={`mailto:${BUSINESS_EMAIL}`} className="hover:text-cream">
+                  {BUSINESS_EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
@@ -77,22 +75,6 @@ export default function Footer() {
             </ul>
             <p className="mt-4 text-xs text-cream/50">Mon – Fri: 9am – 6pm</p>
           </div>
-
-          <div>
-            <h4 className="text-sm font-semibold tracking-wide text-cream">Follow Us</h4>
-            <div className="mt-5 flex gap-3">
-              {[InstagramIcon, FacebookIcon, TwitterIcon].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/70 transition-colors hover:border-maroon-300 hover:text-maroon-300"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
@@ -100,12 +82,12 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-cream/50 sm:flex-row lg:px-10">
           <p>© 2026 Premier Midwest Homes. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-cream">
+            <Link href="/privacy-policy" className="hover:text-cream">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-cream">
+            </Link>
+            <Link href="/terms" className="hover:text-cream">
               Terms &amp; Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>

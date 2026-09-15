@@ -7,17 +7,68 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import HomesFilters from "@/components/HomesFilters";
 import Reveal from "@/components/Reveal";
 import { ArrowRightIcon } from "@/components/icons";
-import { homes } from "@/lib/homes";
+import { homes, parsePriceValue } from "@/lib/homes";
+import { SITE_URL } from "@/lib/site";
+
+const title = "All Available Homes";
+const description =
+  "Browse manufactured and modular homes currently available from Premier Midwest Homes, with floor plans, specs, and pricing.";
 
 export const metadata: Metadata = {
-  title: "All Available Homes | Premier Midwest Homes",
-  description:
-    "Browse manufactured and modular homes currently available from Premier Midwest Homes, with floor plans, specs, and pricing.",
+  title,
+  description,
+  alternates: {
+    canonical: "/homes",
+  },
+  openGraph: {
+    url: "/homes",
+    title,
+    description,
+  },
+  twitter: {
+    title,
+    description,
+  },
+};
+
+const homesItemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Available Manufactured & Modular Homes",
+  itemListElement: homes.map((home, index) => {
+    const price = parsePriceValue(home.price);
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: home.name,
+        brand: home.brand,
+        description: `${home.series} — ${home.beds} bed, ${home.baths} bath, ${home.sqft} sqft`,
+        ...(home.photo ? { image: `${SITE_URL}${home.photo.src}` } : {}),
+        ...(price
+          ? {
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "USD",
+                price,
+                availability: "https://schema.org/InStock",
+                url: `${SITE_URL}/homes`,
+              },
+            }
+          : {}),
+      },
+    };
+  }),
 };
 
 export default function HomesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homesItemListJsonLd) }}
+      />
       <Navbar />
       <main className="flex-1">
         <section className="relative flex h-[46vh] min-h-[380px] w-full items-end overflow-hidden">
