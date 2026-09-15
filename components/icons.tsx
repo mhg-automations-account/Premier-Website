@@ -286,6 +286,37 @@ export function ChevronIcon({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
+export function GoogleIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#4285F4"
+        d="M23 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.18a5.28 5.28 0 0 1-2.29 3.46v2.87h3.7C21.8 18.6 23 15.72 23 12.27Z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 23c3.1 0 5.7-1.02 7.59-2.77l-3.7-2.87c-1.03.69-2.35 1.1-3.89 1.1-2.99 0-5.52-2-6.42-4.7H1.76v2.95A11 11 0 0 0 12 23Z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.58 13.76A6.6 6.6 0 0 1 5.24 12c0-.61.11-1.2.34-1.76V7.29H1.76A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.71l3.4-2.95Z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 5.55c1.68 0 3.19.58 4.38 1.71l3.28-3.28C17.7 2.21 15.1 1 12 1a11 11 0 0 0-10.24 6.29l3.82 2.95c.9-2.7 3.43-4.69 6.42-4.69Z"
+      />
+    </svg>
+  );
+}
+
+export function PlayIcon({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M8 5.5v13l11-6.5-11-6.5Z" />
+    </svg>
+  );
+}
+
 export function PaperPlaneIcon({ className = "h-4 w-4" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
