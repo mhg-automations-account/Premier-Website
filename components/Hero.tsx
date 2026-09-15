@@ -3,6 +3,7 @@ import Link from "next/link";
 import HeroQuoteForm from "./HeroQuoteForm";
 import { ArrowRightIcon, CheckIcon, PhoneIcon, StarIcon } from "./icons";
 import { homes } from "@/lib/homes";
+import { BUSINESS_PHONE_TEL } from "@/lib/site";
 
 const trustPoints = ["Licensed Dealer", "Financing Available", "Delivery Included"];
 
@@ -48,7 +49,7 @@ export default function Hero() {
               <ArrowRightIcon className="arrow h-4 w-4" />
             </Link>
             <a
-              href="tel:14173820829"
+              href={`tel:${BUSINESS_PHONE_TEL}`}
               className="glass btn-pill border-cream/30 text-cream hover:bg-cream hover:text-ink"
             >
               <PhoneIcon className="h-4 w-4" />
