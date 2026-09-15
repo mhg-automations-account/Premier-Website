@@ -20,3 +20,7 @@ export const BUSINESS_ADDRESS = {
   postalCode: "66770",
   addressCountry: "US",
 };
+
+export const GOOGLE_PLACE_ID = "ChIJg-PSmMVzyIcR0KCE6tVyIgs";
+
+export const GOOGLE_REVIEWS_URL = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
