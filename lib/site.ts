@@ -24,3 +24,6 @@ export const BUSINESS_ADDRESS = {
 export const GOOGLE_PLACE_ID = "ChIJg-PSmMVzyIcR0KCE6tVyIgs";
 
 export const GOOGLE_REVIEWS_URL = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
+
+// TODO: replace with the real Trove URL once provided.
+export const TROVE_URL = "https://trove.example.com";
