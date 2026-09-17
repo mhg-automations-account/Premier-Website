@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon, BathIcon, BedIcon, ExpandIcon } from "./icons";
 import type { Home } from "@/lib/homes";
+import { TROVE_URL } from "@/lib/site";
 
 export default function HomeCard({ home }: { home: Home }) {
   const isPriced = /^\d/.test(home.price);
@@ -71,6 +72,16 @@ export default function HomeCard({ home }: { home: Home }) {
             <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
           </Link>
         </div>
+
+        <a
+          href={TROVE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/trove mt-4 flex items-center justify-center gap-1.5 rounded-full border border-maroon-300 px-4 py-2.5 text-sm font-semibold text-maroon-600 transition-colors hover:bg-maroon-100"
+        >
+          Customize This Home
+          <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-300 group-hover/trove:translate-x-1" />
+        </a>
       </div>
     </div>
   );
